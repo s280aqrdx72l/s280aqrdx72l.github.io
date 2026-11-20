@@ -1,0 +1,1312 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大赛入口爆料_赛事资讯_原创视频爆料社区</title>
+<meta name="description" content="每日大赛入口爆料是每日大赛官方网站，专注赛事入口资讯、参赛攻略与原创爆料视频，为企业与创作者搭建高品质内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2b4a'/%3E%3Cpath d='M24 18 L48 32 L24 46 Z' fill='%23ffb020'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --dmx-ink:#101a2e;
+    --dmx-ink-2:#1b2b4a;
+    --dmx-blue:#1f4fd8;
+    --dmx-blue-soft:#e8eefc;
+    --dmx-amber:#ffb020;
+    --dmx-amber-deep:#e08a00;
+    --dmx-paper:#f6f8fc;
+    --dmx-line:#dde4f0;
+    --dmx-gray:#5b6b86;
+    --dmx-white:#ffffff;
+    --dmx-radius:16px;
+    --dmx-shadow:0 10px 30px rgba(16,26,46,.10);
+    --dmx-shadow-sm:0 4px 14px rgba(16,26,46,.08);
+    --dmx-max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:132px}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    background:var(--dmx-paper);color:var(--dmx-ink);line-height:1.75;font-size:16px;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  ul{list-style:none}
+  .dmx-wrap{width:100%;max-width:var(--dmx-max);margin:0 auto;padding:0 20px}
+  .dmx-eyebrow{
+    display:inline-block;font-size:13px;letter-spacing:2px;color:var(--dmx-blue);
+    font-weight:700;margin-bottom:10px;text-transform:uppercase;
+  }
+  .dmx-section{padding:64px 0}
+  .dmx-section-head{margin-bottom:34px;max-width:760px}
+  .dmx-section-head h2{font-size:clamp(22px,3vw,30px);line-height:1.35;letter-spacing:.5px}
+  .dmx-section-head p{margin-top:10px;color:var(--dmx-gray);font-size:15px}
+  .dmx-btn{
+    display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;
+    font-size:15px;font-weight:600;transition:.25s;white-space:nowrap;
+  }
+  .dmx-btn-primary{background:var(--dmx-blue);color:#fff;box-shadow:0 6px 18px rgba(31,79,216,.28)}
+  .dmx-btn-primary:hover{background:#173fb5;transform:translateY(-2px)}
+  .dmx-btn-ghost{background:#fff;color:var(--dmx-ink);border:1px solid var(--dmx-line)}
+  .dmx-btn-ghost:hover{border-color:var(--dmx-blue);color:var(--dmx-blue)}
+  .dmx-btn-amber{background:var(--dmx-amber);color:#2a1c00;box-shadow:0 6px 18px rgba(255,176,32,.35)}
+  .dmx-btn-amber:hover{background:var(--dmx-amber-deep);transform:translateY(-2px)}
+
+  /* ---------- 吸顶区：公告条 + 页头 ---------- */
+  .dmx-sticky{position:sticky;top:0;z-index:100;box-shadow:0 2px 14px rgba(16,26,46,.06)}
+  .dmx-announce{
+    background:linear-gradient(90deg,#131f38,#1f4fd8 60%,#2f6be8);
+    color:#fff;font-size:14px;
+  }
+  .dmx-announce-inner{
+    display:flex;align-items:center;gap:12px;min-height:44px;padding:6px 20px;
+    width:100%;max-width:var(--dmx-max);margin:0 auto;
+  }
+  .dmx-announce-tag{
+    flex:none;background:var(--dmx-amber);color:#2a1c00;font-size:12px;font-weight:800;
+    padding:2px 10px;border-radius:999px;letter-spacing:1px;
+  }
+  .dmx-announce-track{flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .dmx-announce-track strong{color:var(--dmx-amber)}
+  .dmx-announce-more{flex:none;font-size:13px;opacity:.85;border-bottom:1px dashed rgba(255,255,255,.6)}
+  .dmx-announce-more:hover{opacity:1}
+  .dmx-header{background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--dmx-line)}
+  .dmx-header-inner{
+    display:flex;align-items:center;gap:18px;min-height:72px;
+    width:100%;max-width:var(--dmx-max);margin:0 auto;padding:0 20px;
+  }
+  .dmx-logo{display:flex;align-items:center;gap:10px;flex:none}
+  .dmx-logo-mark{
+    width:40px;height:40px;border-radius:12px;background:var(--dmx-ink-2);
+    display:grid;place-items:center;position:relative;overflow:hidden;
+  }
+  .dmx-logo-mark::before{
+    content:"";width:0;height:0;border-left:14px solid var(--dmx-amber);
+    border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px;
+  }
+  .dmx-logo-text{display:flex;flex-direction:column;line-height:1.15}
+  .dmx-logo-text b{font-size:17px;letter-spacing:.5px}
+  .dmx-logo-text span{font-size:11px;color:var(--dmx-gray);letter-spacing:2px}
+  .dmx-nav{flex:1;display:flex;gap:4px;flex-wrap:wrap}
+  .dmx-nav a{
+    padding:8px 12px;border-radius:8px;font-size:15px;color:var(--dmx-ink);font-weight:500;transition:.2s;
+  }
+  .dmx-nav a:hover{background:var(--dmx-blue-soft);color:var(--dmx-blue)}
+  .dmx-header-tools{display:flex;align-items:center;gap:10px;flex:none}
+  .dmx-search{position:relative;display:flex;align-items:center}
+  .dmx-search input{
+    width:190px;padding:9px 38px 9px 14px;border-radius:999px;border:1px solid var(--dmx-line);
+    background:var(--dmx-paper);font-size:14px;outline:none;transition:.25s;color:var(--dmx-ink);
+  }
+  .dmx-search input:focus{border-color:var(--dmx-blue);background:#fff;width:230px;box-shadow:0 0 0 3px rgba(31,79,216,.12)}
+  .dmx-search button{
+    position:absolute;right:6px;width:28px;height:28px;border-radius:50%;
+    background:var(--dmx-blue);color:#fff;display:grid;place-items:center;font-size:14px;
+  }
+  .dmx-search-tip{
+    position:absolute;top:46px;left:0;right:0;background:#fff;border:1px solid var(--dmx-line);
+    border-radius:12px;box-shadow:var(--dmx-shadow);padding:8px;display:none;font-size:13px;z-index:120;
+  }
+  .dmx-search-tip.active{display:block}
+  .dmx-search-tip li{padding:7px 10px;border-radius:8px;cursor:pointer;color:var(--dmx-gray)}
+  .dmx-search-tip li:hover{background:var(--dmx-blue-soft);color:var(--dmx-blue)}
+  .dmx-burger{
+    display:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--dmx-line);
+    flex-direction:column;justify-content:center;align-items:center;gap:5px;background:#fff;
+  }
+  .dmx-burger span{display:block;width:18px;height:2px;background:var(--dmx-ink);border-radius:2px;transition:.25s}
+  .dmx-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .dmx-burger.open span:nth-child(2){opacity:0}
+  .dmx-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ---------- 首屏 ---------- */
+  .dmx-hero{background:linear-gradient(160deg,#eef3ff 0%,#f6f8fc 45%,#fff8ec 100%);position:relative;overflow:hidden}
+  .dmx-hero::after{
+    content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle,rgba(31,79,216,.13),transparent 68%);
+    right:-160px;top:-140px;pointer-events:none;
+  }
+  .dmx-hero-inner{
+    display:grid;grid-template-columns:6fr 4fr;gap:44px;align-items:center;
+    padding:60px 0 68px;
+  }
+  .dmx-hero-badge{
+    display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--dmx-line);
+    border-radius:999px;padding:6px 14px;font-size:13px;color:var(--dmx-blue);font-weight:600;
+    box-shadow:var(--dmx-shadow-sm);margin-bottom:18px;
+  }
+  .dmx-hero-badge i{width:8px;height:8px;border-radius:50%;background:#19c37d;display:inline-block;box-shadow:0 0 0 4px rgba(25,195,125,.16)}
+  .dmx-hero h1{
+    font-size:clamp(34px,5.4vw,58px);line-height:1.14;letter-spacing:-1px;
+    margin-bottom:16px;
+  }
+  .dmx-hero h1 em{
+    font-style:normal;color:var(--dmx-blue);position:relative;white-space:nowrap;
+  }
+  .dmx-hero h1 em::after{
+    content:"";position:absolute;left:0;right:0;bottom:4px;height:12px;
+    background:rgba(255,176,32,.45);z-index:-1;border-radius:4px;
+  }
+  .dmx-hero-sub{font-size:17px;color:var(--dmx-gray);max-width:560px;margin-bottom:22px}
+  .dmx-hero-desc{
+    background:rgba(255,255,255,.72);border:1px solid var(--dmx-line);border-radius:var(--dmx-radius);
+    padding:20px 22px;font-size:15px;color:#3b4a63;margin-bottom:26px;max-width:600px;
+  }
+  .dmx-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+  .dmx-hero-stats{display:flex;gap:38px;flex-wrap:wrap}
+  .dmx-hero-stats div b{display:block;font-size:28px;line-height:1.2;color:var(--dmx-ink-2);font-weight:800}
+  .dmx-hero-stats div span{font-size:13px;color:var(--dmx-gray);letter-spacing:.5px}
+  .dmx-hero-visual{position:relative}
+  .dmx-hero-cover{
+    border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(16,26,46,.20);
+    position:relative;border:6px solid #fff;background:#0d1526;
+  }
+  .dmx-hero-cover img{width:100%;aspect-ratio:16/9;object-fit:cover}
+  .dmx-hero-cover-tag{
+    position:absolute;left:14px;top:14px;background:rgba(19,31,56,.82);color:#fff;
+    font-size:12px;padding:5px 12px;border-radius:999px;letter-spacing:1px;
+    border:1px solid rgba(255,255,255,.22);
+  }
+  .dmx-hero-cover-live{
+    position:absolute;right:14px;top:14px;background:#e8352e;color:#fff;font-size:12px;
+    padding:5px 10px;border-radius:6px;font-weight:700;letter-spacing:1px;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .dmx-hero-cover-live i{width:7px;height:7px;background:#fff;border-radius:50%;animation:dmxPulse 1.3s infinite}
+  @keyframes dmxPulse{0%,100%{opacity:1}50%{opacity:.25}}
+  .dmx-hero-cover-foot{
+    position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;
+    background:linear-gradient(transparent,rgba(8,14,26,.88));color:#fff;font-size:14px;font-weight:600;
+  }
+  .dmx-hero-float{
+    position:absolute;left:-22px;bottom:-26px;background:#fff;border-radius:14px;
+    padding:12px 16px;box-shadow:var(--dmx-shadow);font-size:13px;display:flex;gap:10px;align-items:center;
+    border:1px solid var(--dmx-line);
+  }
+  .dmx-hero-float b{color:var(--dmx-blue);font-size:18px;line-height:1}
+
+  /* ---------- 关键词深度解析 ---------- */
+  .dmx-about{background:#fff;border-top:1px solid var(--dmx-line);border-bottom:1px solid var(--dmx-line)}
+  .dmx-about-grid{display:grid;grid-template-columns:1fr 320px;gap:44px;align-items:start}
+  .dmx-about h2{font-size:clamp(23px,3vw,30px);margin-bottom:18px;line-height:1.35}
+  .dmx-about p{color:#3b4a63;margin-bottom:14px;font-size:15.5px}
+  .dmx-about p strong{color:var(--dmx-blue);font-weight:700}
+  .dmx-about-aside{
+    background:linear-gradient(165deg,#101a2e,#1b2b4a);color:#e7edf9;border-radius:var(--dmx-radius);
+    padding:26px 24px;position:sticky;top:150px;
+  }
+  .dmx-about-aside h3{font-size:17px;margin-bottom:14px;color:var(--dmx-amber);letter-spacing:.5px}
+  .dmx-about-aside li{
+    display:flex;align-items:flex-start;gap:10px;font-size:14px;padding:8px 0;
+    border-bottom:1px dashed rgba(255,255,255,.14);color:#c9d4e8;
+  }
+  .dmx-about-aside li:last-child{border-bottom:none}
+  .dmx-about-aside li b{color:#fff;flex:none;width:20px;text-align:center}
+
+  /* ---------- 焦点赛事 ---------- */
+  .dmx-focus-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:22px}
+  .dmx-focus-main{
+    background:#fff;border-radius:var(--dmx-radius);overflow:hidden;box-shadow:var(--dmx-shadow-sm);
+    border:1px solid var(--dmx-line);transition:.3s;display:flex;flex-direction:column;
+  }
+  .dmx-focus-main:hover{transform:translateY(-4px);box-shadow:var(--dmx-shadow)}
+  .dmx-cover{position:relative;overflow:hidden;background:#0d1526}
+  .dmx-cover img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:.5s}
+  .dmx-focus-main:hover .dmx-cover img{transform:scale(1.04)}
+  .dmx-cover-play{
+    position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;
+  }
+  .dmx-cover-play span{
+    width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.92);
+    display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.28);transition:.25s;
+  }
+  .dmx-cover-play span::before{
+    content:"";width:0;height:0;border-left:16px solid var(--dmx-blue);
+    border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px;
+  }
+  .dmx-focus-main:hover .dmx-cover-play span{transform:scale(1.1);background:var(--dmx-amber)}
+  .dmx-cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(8,14,26,.62))}
+  .dmx-cover-label{
+    position:absolute;left:14px;top:14px;background:var(--dmx-amber);color:#2a1c00;
+    font-size:12px;font-weight:800;padding:4px 10px;border-radius:6px;letter-spacing:1px;
+  }
+  .dmx-cover-meta{
+    position:absolute;right:14px;bottom:12px;color:#fff;font-size:12.5px;
+    background:rgba(8,14,26,.66);padding:4px 10px;border-radius:6px;
+  }
+  .dmx-focus-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+  .dmx-focus-body h3{font-size:19px;line-height:1.45;margin-bottom:10px}
+  .dmx-focus-body p{font-size:14.5px;color:var(--dmx-gray);margin-bottom:16px;flex:1}
+  .dmx-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .dmx-tag{
+    font-size:12px;padding:3px 10px;border-radius:999px;background:var(--dmx-blue-soft);
+    color:var(--dmx-blue);font-weight:600;
+  }
+  .dmx-tag.warn{background:#fff3dd;color:#a56600}
+  .dmx-meta-row{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding-top:14px;border-top:1px solid var(--dmx-line);font-size:13px;color:var(--dmx-gray);
+  }
+  .dmx-author{display:flex;align-items:center;gap:8px}
+  .dmx-avatar{
+    width:30px;height:30px;border-radius:50%;flex:none;display:grid;place-items:center;
+    font-size:13px;font-weight:800;color:#fff;
+  }
+  .dmx-actions{display:flex;gap:6px}
+  .dmx-act{
+    display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--dmx-gray);
+    padding:5px 10px;border-radius:999px;border:1px solid var(--dmx-line);background:#fff;transition:.2s;
+  }
+  .dmx-act:hover{border-color:var(--dmx-blue);color:var(--dmx-blue)}
+  .dmx-act.liked{background:#ffeef0;border-color:#ffbcc4;color:#e8352e}
+  .dmx-act.saved{background:#fff6e2;border-color:#ffd98a;color:#a56600}
+  .dmx-focus-side{display:flex;flex-direction:column;gap:14px}
+  .dmx-mini{
+    display:flex;gap:12px;background:#fff;border:1px solid var(--dmx-line);border-radius:var(--dmx-radius);
+    padding:12px;transition:.25s;box-shadow:var(--dmx-shadow-sm);align-items:center;
+  }
+  .dmx-mini:hover{border-color:var(--dmx-blue);transform:translateX(4px)}
+  .dmx-mini .dmx-cover{width:132px;flex:none;border-radius:10px}
+  .dmx-mini .dmx-cover img{aspect-ratio:16/9}
+  .dmx-mini-txt h4{font-size:14.5px;line-height:1.4;margin-bottom:6px}
+  .dmx-mini-txt span{font-size:12.5px;color:var(--dmx-gray)}
+
+  /* ---------- 爆料视频流 ---------- */
+  .dmx-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+  .dmx-chip{
+    padding:7px 16px;border-radius:999px;background:#fff;border:1px solid var(--dmx-line);
+    font-size:14px;color:var(--dmx-gray);transition:.2s;font-weight:500;
+  }
+  .dmx-chip:hover{border-color:var(--dmx-blue);color:var(--dmx-blue)}
+  .dmx-chip.active{background:var(--dmx-ink-2);color:#fff;border-color:var(--dmx-ink-2)}
+  .dmx-stream{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .dmx-card{
+    background:#fff;border-radius:var(--dmx-radius);overflow:hidden;border:1px solid var(--dmx-line);
+    box-shadow:var(--dmx-shadow-sm);transition:.3s;display:flex;flex-direction:column;
+  }
+  .dmx-card:hover{transform:translateY(-5px);box-shadow:var(--dmx-shadow);border-color:#c8d6f5}
+  .dmx-card h3{font-size:15.5px;line-height:1.5;padding:14px 16px 6px}
+  .dmx-card p{font-size:13.5px;color:var(--dmx-gray);padding:0 16px;flex:1}
+  .dmx-card .dmx-tags{padding:12px 16px 0;margin-bottom:10px}
+  .dmx-card .dmx-meta-row{margin:0 16px 14px;padding-top:12px}
+
+  /* ---------- 创作者 ---------- */
+  .dmx-creators{background:#fff;border-top:1px solid var(--dmx-line);border-bottom:1px solid var(--dmx-line)}
+  .dmx-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .dmx-creator{
+    border:1px solid var(--dmx-line);border-radius:var(--dmx-radius);padding:22px 18px;text-align:center;
+    background:linear-gradient(180deg,#fbfcff,#fff);transition:.3s;
+  }
+  .dmx-creator:hover{transform:translateY(-5px);box-shadow:var(--dmx-shadow);border-color:var(--dmx-blue)}
+  .dmx-creator .dmx-avatar{width:64px;height:64px;font-size:22px;margin:0 auto 12px;box-shadow:0 8px 20px rgba(16,26,46,.16)}
+  .dmx-creator h3{font-size:16px;margin-bottom:4px}
+  .dmx-creator .dmx-user-role{font-size:12.5px;color:var(--dmx-blue);font-weight:600;margin-bottom:10px}
+  .dmx-creator p{font-size:13px;color:var(--dmx-gray);margin-bottom:14px;min-height:56px}
+  .dmx-creator-data{display:flex;justify-content:center;gap:16px;font-size:12.5px;color:var(--dmx-gray);padding-top:12px;border-top:1px dashed var(--dmx-line)}
+  .dmx-creator-data b{display:block;color:var(--dmx-ink);font-size:15px}
+
+  /* ---------- 爆料墙 ---------- */
+  .dmx-wall{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+  .dmx-wall-item{
+    position:relative;border-radius:14px;overflow:hidden;background:#0d1526;border:1px solid var(--dmx-line);
+    transition:.3s;
+  }
+  .dmx-wall-item img{width:100%;height:100%;object-fit:cover;transition:.5s}
+  .dmx-wall-item:hover img{transform:scale(1.06)}
+  .dmx-wall-item:hover{box-shadow:var(--dmx-shadow)}
+  .dmx-wall-item span{
+    position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;color:#fff;font-size:13px;
+    background:linear-gradient(transparent,rgba(8,14,26,.86));font-weight:600;
+  }
+  .dmx-w-lg{grid-column:span 4}
+  .dmx-w-lg img{aspect-ratio:16/10}
+  .dmx-w-md{grid-column:span 3}
+  .dmx-w-md img{aspect-ratio:1/1}
+  .dmx-w-sm{grid-column:span 2}
+  .dmx-w-sm img{aspect-ratio:1/1}
+
+  /* ---------- 口碑 ---------- */
+  .dmx-voice{background:linear-gradient(170deg,#101a2e,#1b2b4a 70%,#1f4fd8);color:#e7edf9;border-radius:24px;padding:44px 38px}
+  .dmx-voice .dmx-section-head h2{color:#fff}
+  .dmx-voice .dmx-section-head p{color:#9fb0cc}
+  .dmx-voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .dmx-voice-card{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;
+    padding:18px;font-size:14px;color:#cdd8ea;transition:.3s;
+  }
+  .dmx-voice-card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px)}
+  .dmx-voice-card p{margin-bottom:14px;line-height:1.7}
+  .dmx-voice-user{display:flex;align-items:center;gap:10px;font-size:13px}
+  .dmx-voice-user .dmx-avatar{width:34px;height:34px;font-size:13px}
+  .dmx-voice-user b{display:block;color:#fff;font-size:13.5px}
+  .dmx-voice-user span{color:#8fa3c2;font-size:12px}
+
+  /* ---------- 动态 & FAQ ---------- */
+  .dmx-lower{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+  .dmx-timeline{position:relative;padding-left:26px}
+  .dmx-timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--dmx-line)}
+  .dmx-tl-item{position:relative;padding-bottom:24px}
+  .dmx-tl-item:last-child{padding-bottom:0}
+  .dmx-tl-item::before{
+    content:"";position:absolute;left:-26px;top:6px;width:14px;height:14px;border-radius:50%;
+    background:#fff;border:3px solid var(--dmx-blue);box-shadow:0 0 0 4px #eef3ff;
+  }
+  .dmx-tl-item time{font-size:12.5px;color:var(--dmx-blue);font-weight:700;letter-spacing:.5px}
+  .dmx-tl-item h3{font-size:15.5px;margin:4px 0 6px;line-height:1.5}
+  .dmx-tl-item p{font-size:13.5px;color:var(--dmx-gray)}
+  .dmx-faq details{
+    background:#fff;border:1px solid var(--dmx-line);border-radius:12px;margin-bottom:10px;
+    overflow:hidden;transition:.25s;
+  }
+  .dmx-faq details[open]{border-color:#b8c9ef;box-shadow:var(--dmx-shadow-sm)}
+  .dmx-faq summary{
+    padding:15px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  .dmx-faq summary::-webkit-details-marker{display:none}
+  .dmx-faq summary::after{content:"+";font-size:20px;color:var(--dmx-blue);font-weight:400;transition:.25s}
+  .dmx-faq details[open] summary::after{transform:rotate(45deg)}
+  .dmx-faq details p{padding:0 18px 16px;font-size:14px;color:var(--dmx-gray)}
+
+  /* ---------- 投稿 ---------- */
+  .dmx-submit{
+    background:linear-gradient(120deg,#fff6e2,#eef3ff);border:1px solid var(--dmx-line);
+    border-radius:24px;padding:42px 38px;display:grid;grid-template-columns:1.4fr 1fr;
+    gap:34px;align-items:center;
+  }
+  .dmx-submit h2{font-size:clamp(21px,2.8vw,28px);margin-bottom:12px;line-height:1.4}
+  .dmx-submit p{color:var(--dmx-gray);font-size:15px;margin-bottom:18px}
+  .dmx-submit-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .dmx-submit-list{display:grid;gap:10px}
+  .dmx-submit-list li{
+    background:#fff;border:1px solid var(--dmx-line);border-radius:12px;padding:12px 16px;
+    font-size:14px;display:flex;gap:10px;align-items:center;color:#3b4a63;
+  }
+  .dmx-submit-list li b{
+    flex:none;width:26px;height:26px;border-radius:8px;background:var(--dmx-ink-2);color:var(--dmx-amber);
+    display:grid;place-items:center;font-size:13px;
+  }
+
+  /* ---------- 页脚 ---------- */
+  .dmx-footer{background:#0c1526;color:#9fb0cc;padding:52px 0 26px;margin-top:20px}
+  .dmx-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:34px;margin-bottom:34px}
+  .dmx-footer h3{color:#fff;font-size:15px;margin-bottom:14px;letter-spacing:.5px}
+  .dmx-footer p{font-size:13.5px;line-height:1.8;margin-bottom:10px}
+  .dmx-footer li{margin-bottom:8px}
+  .dmx-footer li a{font-size:13.5px;color:#9fb0cc;transition:.2s}
+  .dmx-footer li a:hover{color:var(--dmx-amber)}
+  .dmx-footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .dmx-footer .dmx-logo-text b{color:#fff}
+  .dmx-footer .dmx-logo-text span{color:#6d7f9c}
+  .dmx-footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);padding-top:18px;display:flex;justify-content:space-between;
+    gap:16px;flex-wrap:wrap;font-size:12.5px;color:#6d7f9c;
+  }
+  .dmx-footer-bottom a:hover{color:var(--dmx-amber)}
+  .dmx-social{display:flex;gap:8px;margin-top:14px}
+  .dmx-social button{
+    width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.08);color:#cdd8ea;
+    font-size:12px;display:grid;place-items:center;transition:.2s;border:1px solid rgba(255,255,255,.1);
+  }
+  .dmx-social button:hover{background:var(--dmx-amber);color:#2a1c00}
+
+  /* ---------- 浮动组件 ---------- */
+  .dmx-toast{
+    position:fixed;left:50%;bottom:36px;transform:translate(-50%,20px);background:var(--dmx-ink-2);
+    color:#fff;padding:12px 22px;border-radius:999px;font-size:14px;box-shadow:0 12px 30px rgba(0,0,0,.28);
+    opacity:0;pointer-events:none;transition:.3s;z-index:300;
+  }
+  .dmx-toast.show{opacity:1;transform:translate(-50%,0)}
+  .dmx-top{
+    position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:14px;
+    background:var(--dmx-ink-2);color:#fff;font-size:18px;display:grid;place-items:center;
+    box-shadow:0 10px 24px rgba(16,26,46,.28);opacity:0;pointer-events:none;transition:.3s;z-index:200;
+  }
+  .dmx-top.show{opacity:1;pointer-events:auto}
+  .dmx-top:hover{background:var(--dmx-blue);transform:translateY(-3px)}
+  .dmx-modal{
+    position:fixed;inset:0;background:rgba(8,14,26,.6);display:none;place-items:center;z-index:400;padding:20px;
+  }
+  .dmx-modal.show{display:grid}
+  .dmx-modal-box{
+    background:#fff;border-radius:18px;padding:28px;max-width:460px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,.3);
+  }
+  .dmx-modal-box h3{font-size:19px;margin-bottom:8px}
+  .dmx-modal-box p{font-size:14px;color:var(--dmx-gray);margin-bottom:18px}
+  .dmx-modal-box textarea{
+    width:100%;min-height:100px;border:1px solid var(--dmx-line);border-radius:12px;padding:12px;
+    font-family:inherit;font-size:14px;outline:none;resize:vertical;margin-bottom:14px;color:var(--dmx-ink);
+  }
+  .dmx-modal-box textarea:focus{border-color:var(--dmx-blue)}
+  .dmx-modal-row{display:flex;gap:10px;justify-content:flex-end}
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:1024px){
+    .dmx-hero-inner{grid-template-columns:1fr;gap:34px}
+    .dmx-about-grid{grid-template-columns:1fr}
+    .dmx-about-aside{position:static}
+    .dmx-stream{grid-template-columns:repeat(2,1fr)}
+    .dmx-creator-grid{grid-template-columns:repeat(2,1fr)}
+    .dmx-voice-grid{grid-template-columns:repeat(2,1fr)}
+    .dmx-lower{grid-template-columns:1fr}
+    .dmx-focus-grid{grid-template-columns:1fr}
+    .dmx-footer-grid{grid-template-columns:1fr 1fr}
+    .dmx-w-lg{grid-column:span 6}
+    .dmx-w-md{grid-column:span 6}
+    .dmx-w-sm{grid-column:span 4}
+  }
+  @media (max-width:840px){
+    html{scroll-padding-top:120px}
+    .dmx-nav{
+      display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;
+      padding:12px 20px 18px;border-bottom:1px solid var(--dmx-line);box-shadow:0 14px 26px rgba(16,26,46,.1);
+      gap:2px;
+    }
+    .dmx-nav.open{display:flex}
+    .dmx-nav a{padding:11px 12px}
+    .dmx-header-inner{position:relative;flex-wrap:wrap;gap:12px}
+    .dmx-burger{display:flex}
+    .dmx-search input{width:130px}
+    .dmx-search input:focus{width:160px}
+    .dmx-submit{grid-template-columns:1fr;padding:30px 24px}
+    .dmx-voice{padding:32px 22px}
+    .dmx-stream{grid-template-columns:1fr}
+    .dmx-creator-grid{grid-template-columns:1fr}
+    .dmx-voice-grid{grid-template-columns:1fr}
+    .dmx-announce-inner{flex-wrap:nowrap}
+    .dmx-announce-more{display:none}
+  }
+  @media (max-width:560px){
+    .dmx-hero-stats{gap:22px}
+    .dmx-hero-stats div b{font-size:23px}
+    .dmx-hero-float{position:static;margin-top:14px;display:inline-flex}
+    .dmx-footer-grid{grid-template-columns:1fr}
+    .dmx-w-lg,.dmx-w-md,.dmx-w-sm{grid-column:span 6}
+    .dmx-about-aside{position:static}
+    .dmx-search{display:none}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶区：公告条 + 页头 -->
+<div class="dmx-sticky">
+  <div class="dmx-announce">
+    <div class="dmx-announce-inner">
+      <span class="dmx-announce-tag">最新</span>
+      <div class="dmx-announce-track">
+        11月19日新增爆料条目 <strong>27 条</strong>｜「每日大赛入口」秋季赛报名通道已开放｜第 46 期创作者挑战报名进行中
+      </div>
+      <a class="dmx-announce-more" href="#dmx-news">查看全部更新</a>
+    </div>
+  </div>
+  <header class="dmx-header">
+    <div class="dmx-header-inner">
+      <a class="dmx-logo" href="#dmx-top" aria-label="每日大赛入口爆料官方网站首页">
+        <span class="dmx-logo-mark" aria-hidden="true"></span>
+        <span class="dmx-logo-text"><b>每日大赛入口爆料</b><span>DAILY CONTEST FEED</span></span>
+      </a>
+      <nav class="dmx-nav" id="dmxNav" aria-label="主导航">
+        <a href="#dmx-top">首页</a>
+        <a href="#dmx-about">品牌解析</a>
+        <a href="#dmx-focus">焦点赛事</a>
+        <a href="#dmx-stream">爆料视频</a>
+        <a href="#dmx-creators">创作者</a>
+        <a href="#dmx-wall">影像墙</a>
+        <a href="#dmx-news">官方动态</a>
+        <a href="#dmx-faq">帮助</a>
+      </nav>
+      <div class="dmx-header-tools">
+        <div class="dmx-search">
+          <input type="search" id="dmxSearchInput" placeholder="搜索赛事入口 / 爆料" aria-label="站内搜索">
+          <button id="dmxSearchBtn" aria-label="搜索">⌕</button>
+          <ul class="dmx-search-tip" id="dmxSearchTip"></ul>
+        </div>
+        <button class="dmx-burger" id="dmxBurger" aria-label="展开导航" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="dmx-hero" id="dmx-top">
+  <div class="dmx-wrap">
+    <div class="dmx-hero-inner">
+      <div class="dmx-hero-copy">
+        <span class="dmx-hero-badge"><i></i>官方发布 · 每日更新 · 入口一对一核实</span>
+        <h1>每日大赛<em>入口爆料</em></h1>
+        <p class="dmx-hero-sub">赛事入口信息聚合 · 原创爆料视频社区 · 深耕赛事资讯垂直领域</p>
+        <div class="dmx-hero-desc">
+          作为持续运营的赛事资讯品牌官网，每日大赛入口爆料以“入口核实 + 爆料影像”为核心，为企业、赛事主办方与内容创作者搭建高品质内容生态。平台坚持官方发布、真实溯源，所有入口条目均经人工二次核对，配套原创视频解读与参赛攻略，帮助用户少走弯路、快速抵达心仪赛程。
+        </div>
+        <div class="dmx-hero-actions">
+          <a class="dmx-btn dmx-btn-primary" href="#dmx-stream">查看今日爆料 →</a>
+          <a class="dmx-btn dmx-btn-amber" href="#dmx-focus">赛事入口速览</a>
+          <a class="dmx-btn dmx-btn-ghost" href="#dmx-submit">我要投稿爆料</a>
+        </div>
+        <div class="dmx-hero-stats">
+          <div><b data-count="1286">0</b><span>累计核实入口</span></div>
+          <div><b data-count="462">0</b><span>签约创作者</span></div>
+          <div><b data-count="97">0</b><span>内容满意度 %</span></div>
+        </div>
+      </div>
+      <div class="dmx-hero-visual">
+        <div class="dmx-hero-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2313203a'/%3E%3Cstop offset='1' stop-color='%231f4fd8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23g1)'/%3E%3Cg stroke='%23ffffff' stroke-opacity='0.13'%3E%3Cpath d='M0 90h640M0 180h640M0 270h640M160 0v360M320 0v360M480 0v360'/%3E%3C/g%3E%3Ccircle cx='512' cy='86' r='58' fill='%23ffb020' fill-opacity='0.9'/%3E%3Ccircle cx='512' cy='86' r='34' fill='%2313203a'/%3E%3Cpath d='M498 68l34 18-34 18z' fill='%23ffb020'/%3E%3Crect x='52' y='208' width='286' height='18' rx='9' fill='%23ffffff' fill-opacity='0.85'/%3E%3Crect x='52' y='244' width='196' height='12' rx='6' fill='%23ffffff' fill-opacity='0.45'/%3E%3Crect x='52' y='270' width='132' height='12' rx='6' fill='%23ffb020' fill-opacity='0.9'/%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Crect x='52' y='40' width='86' height='26' rx='13'/%3E%3Crect x='150' y='40' width='62' height='26' rx='13'/%3E%3C/g%3E%3C/svg%3E" alt="每日大赛入口爆料官方主视觉：赛事入口速览与爆料视频封面">
+          <span class="dmx-hero-cover-tag">官方主视觉</span>
+          <span class="dmx-hero-cover-live"><i></i>报名中</span>
+          <div class="dmx-hero-cover-foot">秋季赛入口已核实开放 · 报名截止 12 月 08 日</div>
+        </div>
+        <div class="dmx-hero-float"><b>27</b><span>今日新增爆料条目<br>入口已人工核实</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 关键词深度解析 -->
+<section class="dmx-section dmx-about" id="dmx-about">
+  <div class="dmx-wrap">
+    <div class="dmx-about-grid">
+      <div>
+        <span class="dmx-eyebrow">关于我们 · 品牌解析</span>
+        <h2>每日大赛入口爆料：把“找不到入口”这件事，做成一件可以查证的事</h2>
+        <p>「每日大赛入口爆料」并不是一个简单的链接集合页。它是一家持续运营的赛事资讯企业品牌站，核心业务由三部分组成：<strong>入口核实</strong>、<strong>爆料影像</strong>与<strong>参赛攻略</strong>。我们每天从主办方官方渠道、公开赛程公告、合作机构发布中采集新增赛事，逐条核对报名路径、时间节点与参赛门槛，再由编辑部与签约创作者联合产出视频与图文说明，最终以“可看、可查、可复现”的方式呈现在官网上。</p>
+        <p>平台之所以强调“入口”，是因为赛事参与的最大摩擦往往不在比赛本身，而在开始之前的几分钟——报名页找不到、名额入口变化、赛程节点记错、材料清单漏项。每日大赛入口爆料把这些细碎问题当作核心资产来经营：每条爆料都标注<strong>来源、核实时间、适用范围</strong>，并保留更新记录。对用户而言，这是一份值得信赖的参赛地图；对主办方而言，这是一条可以触达真实参赛者的内容渠道。</p>
+        <p>在内容生态层面，我们坚持原创与正版优先。所有视频由平台或签约创作者独立拍摄、剪辑、配音，不搬运、不拼接、不使用未授权素材。我们相信，赛事资讯同样需要品质与匠心：一段三十秒的入口指引，背后可能是数小时的电话核对与页面溯源。正因为如此，社区里的创作者愿意把这里当作长期阵地——他们既是爆料者，也是验证者，用真实记录为平台口碑背书。</p>
+        <p>面向未来，每日大赛入口爆料希望成为赛事资讯这一垂直领域的行业领先样本。我们会持续投入信息的结构化整理，开放更清晰的入口索引；也会在赛事周期内推出专题企划、创作者挑战与用户投票，让“爆料”不止于信息传递，更成为一种<strong>陪伴与成长</strong>的社区关系。每一个赛季开始之前，你都可以在这里找到属于自己的那条入口。</p>
+        <p>我们同样重视社会责任。平台对涉及未成年人参赛的赛事信息会做额外提示，对来源不明的“所谓内部入口”一律不予收录，并在页面显眼位置提醒用户通过主办方官方渠道确认。用户至上不是口号，而是每一条爆料背后的审核动作。</p>
+      </div>
+      <aside class="dmx-about-aside">
+        <h3>平台数据一览</h3>
+        <ul>
+          <li><b>◆</b><span>累计核实赛事入口 <strong>1,286</strong> 条，覆盖 9 大品类</span></li>
+          <li><b>◆</b><span>签约与入驻创作者 <strong>462</strong> 位，原创爆料视频 <strong>3,900+</strong> 条</span></li>
+          <li><b>◆</b><span>爆料平均核实时长 <strong>4.2 小时</strong>，二次复核率 <strong>100%</strong></span></li>
+          <li><b>◆</b><span>华东、华中、西南、华北设内容协作点</span></li>
+          <li><b>◆</b><span>企业动态、官方发布与更新日志在站内公开可查</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 焦点赛事 -->
+<section class="dmx-section" id="dmx-focus">
+  <div class="dmx-wrap">
+    <div class="dmx-section-head">
+      <span class="dmx-eyebrow">Focus · 焦点赛事</span>
+      <h2>今日焦点：三条入口已完成核实的赛程</h2>
+      <p>焦点赛事由编辑部每日轮换推荐，入口状态与报名节点在发布前经过二次确认，若发生变动会在对应爆料页更新说明。</p>
+    </div>
+    <div class="dmx-focus-grid">
+      <article class="dmx-focus-main">
+        <div class="dmx-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%230c1526'/%3E%3Cstop offset='1' stop-color='%232f6be8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23g2)'/%3E%3Cg fill='none' stroke='%23ffb020' stroke-width='3' stroke-opacity='.8'%3E%3Ccircle cx='320' cy='170' r='86'/%3E%3Ccircle cx='320' cy='170' r='112' stroke-dasharray='8 14'/%3E%3C/g%3E%3Cpath d='M300 138l56 32-56 32z' fill='%23ffb020'/%3E%3Cg fill='%23ffffff' fill-opacity='.75'%3E%3Crect x='48' y='286' width='170' height='16' rx='8'/%3E%3Crect x='238' y='286' width='110' height='16' rx='8' fill-opacity='.4'/%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='.18'%3E%3Ccircle cx='92' cy='76' r='26'/%3E%3Ccircle cx='560' cy='280' r='40'/%3E%3C/g%3E%3C/svg%3E" alt="秋季创作大赛入口爆料封面：深蓝舞台与金色圆环">
+          <span class="dmx-cover-label">TOP 1</span>
+          <div class="dmx-cover-shade"></div>
+          <div class="dmx-cover-play"><span></span></div>
+          <span class="dmx-cover-meta">08:46 · 1.2 万次播放</span>
+        </div>
+        <div class="dmx-focus-body">
+          <h3>秋季创作大赛报名入口开放实测：三步走完报名流程</h3>
+          <p>编辑部按报名页逐屏录制，完整演示账号注册、作品信息填写与材料上传。视频末尾附常见报错提示与客服通道，适合第一次参赛的创作者对照操作。</p>
+          <div class="dmx-tags">
+            <span class="dmx-tag">入口实测</span>
+            <span class="dmx-tag warn">报名中</span>
+            <span class="dmx-tag">参赛攻略</span>
+          </div>
+          <div class="dmx-meta-row">
+            <div class="dmx-author">
+              <span class="dmx-avatar" style="background:#1f4fd8">陈</span>
+              <span>陈拾光 · 编辑部</span>
+            </div>
+            <div class="dmx-actions">
+              <button class="dmx-act dmx-like-btn" data-liked="false">♡ <span class="dmx-like-count">386</span></button>
+              <button class="dmx-act dmx-save-btn">☆ 收藏</button>
+              <button class="dmx-act dmx-share-btn">分享</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="dmx-focus-side">
+        <article class="dmx-mini">
+          <div class="dmx-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23eef3ff'/%3E%3Cg fill='%231f4fd8'%3E%3Crect x='30' y='112' width='26' height='44' rx='5'/%3E%3Crect x='68' y='86' width='26' height='70' rx='5'/%3E%3Crect x='106' y='60' width='26' height='96' rx='5'/%3E%3Crect x='144' y='96' width='26' height='60' rx='5'/%3E%3C/g%3E%3Ccircle cx='238' cy='74' r='34' fill='%23ffb020'/%3E%3Cpath d='M228 60l24 14-24 14z' fill='%23eef3ff'/%3E%3Crect x='30' y='36' width='96' height='12' rx='6' fill='%23101a2e' fill-opacity='.7'/%3E%3C/svg%3E" alt="数据类赛事入口爆料封面：蓝色柱状图与播放按钮">
+          </div>
+          <div class="dmx-mini-txt">
+            <h4>数据大赛入口变更提醒：新域名路径核对</h4>
+            <span>爆料核实 · 2 小时前更新</span>
+          </div>
+        </article>
+        <article class="dmx-mini">
+          <div class="dmx-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23fff6e2'/%3E%3Cg stroke='%23e08a00' stroke-width='3' fill='none'%3E%3Cpath d='M48 120c26-42 52-42 78 0s52 42 78 0 52-42 68 0'/%3E%3C/g%3E%3Ccircle cx='90' cy='62' r='22' fill='%23e08a00' fill-opacity='.28'/%3E%3Ccircle cx='230' cy='128' r='30' fill='%231f4fd8' fill-opacity='.22'/%3E%3Crect x='48' y='36' width='120' height='12' rx='6' fill='%23101a2e' fill-opacity='.6'/%3E%3C/svg%3E" alt="短视频挑战赛入口爆料封面：米白底色与橙色曲线">
+          </div>
+          <div class="dmx-mini-txt">
+            <h4>短视频挑战赛第 46 期：主题与入口同步公开</h4>
+            <span>焦点企划 · 昨日 21:30</span>
+          </div>
+        </article>
+        <article class="dmx-mini">
+          <div class="dmx-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%2313203a'/%3E%3Cg fill='none' stroke='%2319c37d' stroke-width='2.5'%3E%3Cpath d='M0 132l48-26 40 20 44-34 42 22 46-40 60 30'/%3E%3C/g%3E%3Ccircle cx='260' cy='56' r='18' fill='%23ffb020'/%3E%3Crect x='30' y='40' width='110' height='12' rx='6' fill='%23ffffff' fill-opacity='.7'/%3E%3Crect x='30' y='62' width='70' height='10' rx='5' fill='%23ffffff' fill-opacity='.36'/%3E%3C/svg%3E" alt="新人榜入口爆料封面：深色背景与绿色折线">
+          </div>
+          <div class="dmx-mini-txt">
+            <h4>新人榜入口开放：首投创作者扶持细则</h4>
+            <span>新人通道 · 3 天前</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 爆料视频流 -->
+<section class="dmx-section" id="dmx-stream" style="background:#fff;border-top:1px solid var(--dmx-line);border-bottom:1px solid var(--dmx-line)">
+  <div class="dmx-wrap">
+    <div class="dmx-section-head">
+      <span class="dmx-eyebrow">Feed · 爆料视频流</span>
+      <h2>最新的入口爆料，按标签筛选查看</h2>
+      <p>视频内容覆盖入口实测、参赛攻略、赛程变动与人物访谈，标签可快速定位你关心的赛程类型。</p>
+    </div>
+    <div class="dmx-filter" id="dmxFilter">
+      <button class="dmx-chip active" data-filter="all">全部</button>
+      <button class="dmx-chip" data-filter="entry">入口实测</button>
+      <button class="dmx-chip" data-filter="guide">参赛攻略</button>
+      <button class="dmx-chip" data-filter="change">赛程变动</button>
+      <button class="dmx-chip" data-filter="story">人物访谈</button>
+    </div>
+    <div class="dmx-stream" id="dmxStream">
+
+      <article class="dmx-card" data-cat="entry">
+        <div class="dmx-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%231f4fd8'/%3E%3Cg fill='%23ffffff' fill-opacity='.14'%3E%3Ccircle cx='390' cy='60' r='70'/%3E%3Ccircle cx='70' cy='214' r='46'/%3E%3C/g%3E%3Crect x='44' y='64' width='200' height='18' rx='9' fill='%23ffffff' fill-opacity='.92'/%3E%3Crect x='44' y='98' width='140' height='12' rx='6' fill='%23ffffff' fill-opacity='.5'/%3E%3Crect x='44' y='176' width='108' height='34' rx='17' fill='%23ffb020'/%3E%3Cpath d='M300 132l54 30-54 30z' fill='%23ffffff' fill-opacity='.85'/%3E%3C/svg%3E" alt="短视频挑战赛报名入口实测封面：蓝色背景与白色播放键">
+        </div>
+        <h3>短视频挑战赛报名入口实测：从注册到提交共 4 分钟</h3>
+        <p>一步步演示报名页面，包括验证码环节与作品链接填写注意事项。</p>
+        <div class="dmx-tags"><span class="dmx-tag">入口实测</span><span class="dmx-tag warn">报名中</span></div>
+        <div class="dmx-meta-row">
+          <div class="dmx-author"><span class="dmx-avatar" style="background:#2f6be8">林</span><span>林知夏</span></div>
+          <div class="dmx-actions">
+            <button class="dmx-act dmx-like-btn" data-liked="false">♡ <span class="dmx-like-count">214</span></button>
+            <button class="dmx-act dmx-save-btn">☆ 收藏</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dmx-card" data-cat="guide">
+        <div class="dmx-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23fff6e2'/%3E%3Cg stroke='%23e08a00' stroke-width='4' fill='none'%3E%3Cpath d='M60 200c40-70 80-70 120 0s80 70 120 0 80-70 120 0'/%3E%3C/g%3E%3Crect x='52' y='52' width='176' height='16' rx='8' fill='%23101a2e' fill-opacity='.75'/%3E%3Crect x='52' y='82' width='120' height='10' rx='5' fill='%23101a2e' fill-opacity='.38'/%3E%3Ccircle cx='374' cy='72' r='30' fill='%23e08a00' fill-opacity='.55'/%3E%3C/svg%3E" alt="材料清单攻略封面：米白底色与橙色波纹曲线">
+        </div>
+        <h3>报名材料清单逐项拆解：这 6 项最容易漏</h3>
+        <p>按作品类型分类整理材料要求，标注了本届新增与往届差异项。</p>
+        <div class="dmx-tags"><span class="dmx-tag">参赛攻略</span><span class="dmx-tag">清单核对</span></div>
+        <div class="dmx-meta-row">
+          <div class="dmx-author"><span class="dmx-avatar" style="background:#e08a00">周</span><span>周屿</span></div>
+          <div class="dmx-actions">
+            <button class="dmx-act dmx-like-btn" data-liked="false">♡ <span class="dmx-like-count">178</span></button>
+            <button class="dmx-act dmx-save-btn">☆ 收藏</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dmx-card" data-cat="change">
+        <div class="dmx-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%2313203a'/%3E%3Cg fill='none' stroke='%2319c37d' stroke-width='3'%3E%3Cpath d='M0 196l60-34 52 26 58-44 56 28 58-50 76 38'/%3E%3C/g%3E%3Cg fill='%23ffb020'%3E%3Crect x='60' y='216' width='12' height='-0'/%3E%3C/g%3E%3Crect x='46' y='48' width='150' height='16' rx='8' fill='%23ffffff' fill-opacity='.85'/%3E%3Crect x='46' y='78' width='92' height='10' rx='5' fill='%23ffffff' fill-opacity='.4'/%3E%3Ccircle cx='392' cy='212' r='34' fill='%23e8352e' fill-opacity='.85'/%3E%3C/svg%3E" alt="赛程变动提醒封面：深色背景与绿色趋势线">
+        </div>
+        <h3>赛程变动速报：截止日期顺延与入口路径调整</h3>
+        <p>汇总近两周发生的五处节点变动，附原公告与新版入口路径对照。</p>
+        <div class="dmx-tags"><span class="dmx-tag">赛程变动</span><span class="dmx-tag warn">已核实</span></div>
+        <div class="dmx-meta-row">
+          <div class="dmx-author"><span class="dmx-avatar" style="background:#13203a">陈</span><span>陈拾光</span></div>
+          <div class="dmx-actions">
+            <button class="dmx-act dmx-like-btn" data-liked="false">♡ <span class="dmx-like-count">302</span></button>
+            <button class="dmx-act dmx-save-btn">☆ 收藏</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dmx-card" data-cat="story">
+        <div class="dmx-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23f3e9f8'/%3E%3Ccircle cx='150' cy='120' r='58' fill='%236a3f8f' fill-opacity='.55'/%3E%3Ccircle cx='150' cy='102' r='24' fill='%236a3f8f'/%3E%3Cpath d='M112 168c6-30 28-44 38-44s32 14 38 44z' fill='%236a3f8f'/%3E%3Crect x='252' y='70' width='160' height='14' rx='7' fill='%23101a2e' fill-opacity='.6'/%3E%3Crect x='252' y='98' width='120' height='10' rx='5' fill='%23101a2e' fill-opacity='.32'/%3E%3Crect x='252' y='130' width='140' height='10' rx='5' fill='%23101a2e' fill-opacity='.2'/%3E%3Crect x='252' y='172' width='96' height='28' rx='14' fill='%23ffb020'/%3E%3C/svg%3E" alt="创作者访谈封面：浅紫背景与人物剪影">
+        </div>
+        <h3>创作者访谈：连续三次参赛，我把入口踩点做成了习惯</h3>
+        <p>一位老选手分享她的赛前 checklist，以及如何利用爆料信息提前准备。</p>
+        <div class="dmx-tags"><span class="dmx-tag">人物访谈</span><span class="dmx-tag">参赛心得</span></div>
+        <div class="dmx-meta-row">
+          <div class="dmx-author"><span class="dmx-avatar" style="background:#6a3f8f">苏</span><span>苏晚晴</span></div>
+          <div class="dmx-actions">
+            <button class="dmx-act dmx-like-btn" data-liked="false">♡ <span class="dmx-like-count">256</span></button>
+            <button class="dmx-act dmx-save-btn">☆ 收藏</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dmx-card" data-cat="guide">
+        <div class="dmx-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23eef3ff'/%3E%3Cg fill='%231f4fd8'%3E%3Crect x='56' y='150' width='40' height='72' rx='8'/%3E%3Crect x='112' y='120' width='40' height='102' rx='8'/%3E%3Crect x='168' y='88' width='40' height='134' rx='8'/%3E%3Crect x='224' y='130' width='40' height='92' rx='8'/%3E%3C/g%3E%3Ccircle cx='366' cy='116' r='46' fill='%23ffb020'/%3E%3Cpath d='M352 98l30 18-30 18z' fill='%23eef3ff'/%3E%3Crect x='56' y='46' width='148' height='16' rx='8' fill='%23101a2e' fill-opacity='.72'/%3E%3C/svg%3E" alt="评审标准解读封面：浅蓝背景与蓝色数据柱">
+        </div>
+        <h3>评审标准解读：从往届获奖作品反推评分逻辑</h3>
+        <p>整理 12 份公开评审表，归纳出四类高频加分项与三类常见扣分点。</p>
+        <div class="dmx-tags"><span class="dmx-tag">参赛攻略</span><span class="dmx-tag">作品打磨</span></div>
+        <div class="dmx-meta-row">
+          <div class="dmx-author"><span class="dmx-avatar" style="background:#1f4fd8">何</span><span>何未央</span></div>
+          <div class="dmx-actions">
+            <button class="dmx-act dmx-like-btn" data-liked="false">♡ <span class="dmx-like-count">341</span></button>
+            <button class="dmx-act dmx-save-btn">☆ 收藏</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dmx-card" data-cat="entry">
+        <div class="dmx-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%2319c37d' fill-opacity='.16'/%3E%3Cg fill='none' stroke='%230d7a52' stroke-width='4'%3E%3Crect x='62' y='62' width='150' height='104' rx='12'/%3E%3Cpath d='M62 88h150'/%3E%3C/g%3E%3Cg fill='%230d7a52'%3E%3Ccircle cx='82' cy='75' r='6'/%3E%3Ccircle cx='102' cy='75' r='6'/%3E%3C/g%3E%3Crect x='250' y='62' width='170' height='16' rx='8' fill='%230d7a52' fill-opacity='.7'/%3E%3Crect x='250' y='94' width='124' height='11' rx='5' fill='%230d7a52' fill-opacity='.4'/%3E%3Crect x='250' y='126' width='84' height='30' rx='15' fill='%23ffb020'/%3E%3C/svg%3E" alt="团队赛入口确认封面：浅绿背景与浏览器窗口图形">
+        </div>
+        <h3>团队赛入口确认：队长建队与成员加入完整路径</h3>
+        <p>演示队长账号创建团队、生成邀请码、成员确认加入的全流程。</p>
+        <div class="dmx-tags"><span class="dmx-tag">入口实测</span><span class="dmx-tag">团队赛</span></div>
+        <div class="dmx-meta-row">
+          <div class="dmx-author"><span class="dmx-avatar" style="background:#0d7a52">沈</span><span>沈砚舟</span></div>
+          <div class="dmx-actions">
+            <button class="dmx-act dmx-like-btn" data-liked="false">♡ <span class="dmx-like-count">163</span></button>
+            <button class="dmx-act dmx-save-btn">☆ 收藏</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 创作者矩阵 -->
+<section class="dmx-section dmx-creators" id="dmx-creators">
+  <div class="dmx-wrap">
+    <div class="dmx-section-head">
+      <span class="dmx-eyebrow">Creators · 创作者矩阵</span>
+      <h2>把入口讲清楚的人，都在这里</h2>
+      <p>他们不是搬运工，而是会在报名页反复验证、在赛程变动时第一时间提醒的长期记录者。</p>
+    </div>
+    <div class="dmx-creator-grid">
+      <article class="dmx-creator">
+        <span class="dmx-avatar" style="background:#1f4fd8">陈</span>
+        <h3>陈拾光</h3>
+        <div class="dmx-user-role">入口核实 · 编辑部主笔</div>
+        <p>专注赛程节点核对，擅长把复杂的报名路径拆成清晰步骤。</p>
+        <div class="dmx-creator-data">
+          <div><b>312</b>作品</div>
+          <div><b>4.8万</b>关注</div>
+        </div>
+      </article>
+      <article class="dmx-creator">
+        <span class="dmx-avatar" style="background:#e08a00">周</span>
+        <h3>周屿</h3>
+        <div class="dmx-user-role">参赛攻略 · 内容创作者</div>
+        <p>前赛事执行，熟悉评审流程，攻略内容以细节与节奏感见长。</p>
+        <div class="dmx-creator-data">
+          <div><b>186</b>作品</div>
+          <div><b>3.1万</b>关注</div>
+        </div>
+      </article>
+      <article class="dmx-creator">
+        <span class="dmx-avatar" style="background:#6a3f8f">苏</span>
+        <h3>苏晚晴</h3>
+        <div class="dmx-user-role">人物访谈 · 视频创作者</div>
+        <p>用长镜头记录参赛者真实状态，访谈风格温和，提问直抵细节。</p>
+        <div class="dmx-creator-data">
+          <div><b>97</b>作品</div>
+          <div><b>2.4万</b>关注</div>
+        </div>
+      </article>
+      <article class="dmx-creator">
+        <span class="dmx-avatar" style="background:#0d7a52">沈</span>
+        <h3>沈砚舟</h3>
+        <div class="dmx-user-role">团队赛 · 实测创作者</div>
+        <p>团队赛常驻爆料人，擅长用一个屏幕演示讲透协作类入口。</p>
+        <div class="dmx-creator-data">
+          <div><b>141</b>作品</div>
+          <div><b>1.9万</b>关注</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 影像墙 -->
+<section class="dmx-section" id="dmx-wall">
+  <div class="dmx-wrap">
+    <div class="dmx-section-head">
+      <span class="dmx-eyebrow">Gallery · 影像墙</span>
+      <h2>赛事现场的碎片，也是爆料的另一面</h2>
+      <p>来自创作者与用户投稿的影像片段，记录赛场之外的等待、核对与欢呼。</p>
+    </div>
+    <div class="dmx-wall">
+      <div class="dmx-wall-item dmx-w-lg">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 300'%3E%3Crect width='480' height='300' fill='%231f4fd8'/%3E%3Cg stroke='%23ffffff' stroke-opacity='.2'%3E%3Cpath d='M0 75h480M0 150h480M0 225h480'/%3E%3C/g%3E%3Ccircle cx='240' cy='140' r='66' fill='%23ffb020'/%3E%3Cpath d='M222 114l40 26-40 26z' fill='%231f4fd8'/%3E%3Crect x='40' y='250' width='160' height='14' rx='7' fill='%23ffffff' fill-opacity='.8'/%3E%3C/svg%3E" alt="影像墙：报名倒计时现场大屏与金色按钮">
+        <span>报名截止前的最后一场现场讲解</span>
+      </div>
+      <div class="dmx-wall-item dmx-w-md">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 360'%3E%3Crect width='360' height='360' fill='%23fff6e2'/%3E%3Cg fill='%23e08a00'%3E%3Ccircle cx='120' cy='130' r='52'/%3E%3Ccircle cx='240' cy='210' r='70' fill-opacity='.6'/%3E%3C/g%3E%3Cg fill='%23101a2e' fill-opacity='.6'%3E%3Crect x='60' y='280' width='120' height='12' rx='6'/%3E%3Crect x='60' y='302' width='76' height='10' rx='5'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙：暖橙色圆形舞台与报名台">
+        <span>创作者的参赛材料手稿</span>
+      </div>
+      <div class="dmx-wall-item dmx-w-md">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 360'%3E%3Crect width='360' height='360' fill='%2313203a'/%3E%3Cg fill='none' stroke='%2319c37d' stroke-width='3'%3E%3Cpath d='M40 250l60-50 50 30 60-70 60 40 50-40'/%3E%3C/g%3E%3Ccircle cx='300' cy='80' r='28' fill='%23ffb020'/%3E%3Crect x='40' y='60' width='140' height='14' rx='7' fill='%23ffffff' fill-opacity='.75'/%3E%3Crect x='40' y='90' width='90' height='10' rx='5' fill='%23ffffff' fill-opacity='.36'/%3E%3C/svg%3E" alt="影像墙：深色背景与绿色上升折线">
+        <span>赛季数据看板前的核对时刻</span>
+      </div>
+      <div class="dmx-wall-item dmx-w-sm">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3e9f8'/%3E%3Ccircle cx='150' cy='112' r='44' fill='%236a3f8f' fill-opacity='.6'/%3E%3Cpath d='M96 214c8-42 30-58 54-58s46 16 54 58z' fill='%236a3f8f'/%3E%3Crect x='70' y='248' width='160' height='12' rx='6' fill='%23101a2e' fill-opacity='.22'/%3E%3C/svg%3E" alt="影像墙：浅紫色人物剪影与访谈现场">
+        <span>访谈录制前的十分钟</span>
+      </div>
+      <div class="dmx-wall-item dmx-w-sm">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23eef3ff'/%3E%3Cg fill='%231f4fd8'%3E%3Crect x='62' y='170' width='34' height='70' rx='6'/%3E%3Crect x='112' y='130' width='34' height='110' rx='6'/%3E%3Crect x='162' y='96' width='34' height='144' rx='6'/%3E%3Crect x='212' y='150' width='34' height='90' rx='6'/%3E%3C/g%3E%3Ccircle cx='228' cy='66' r='24' fill='%23ffb020'/%3E%3C/svg%3E" alt="影像墙：浅蓝背景与蓝色数据柱">
+        <span>新人榜数据实时刷新</span>
+      </div>
+      <div class="dmx-wall-item dmx-w-md">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 360'%3E%3Crect width='360' height='360' fill='%23e9f7f1'/%3E%3Cg fill='none' stroke='%230d7a52' stroke-width='4'%3E%3Crect x='60' y='80' width='180' height='120' rx='14'/%3E%3Cpath d='M60 112h180M92 80v-16M208 80v-16'/%3E%3C/g%3E%3Cg fill='%230d7a52'%3E%3Ccircle cx='100' cy='140' r='7'/%3E%3Ccircle cx='126' cy='140' r='7'/%3E%3Ccircle cx='152' cy='140' r='7'/%3E%3C/g%3E%3Crect x='60' y='236' width='140' height='14' rx='7' fill='%230d7a52' fill-opacity='.55'/%3E%3C/svg%3E" alt="影像墙：浅绿背景与日历窗口图形">
+        <span>赛程日历与节点提醒</span>
+      </div>
+      <div class="dmx-wall-item dmx-w-lg">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 300'%3E%3Crect width='480' height='300' fill='%23e8352e' fill-opacity='.9'/%3E%3Cg fill='%23101a2e'%3E%3Crect x='50' y='70' width='200' height='18' rx='9' fill-opacity='.75'/%3E%3Crect x='50' y='104' width='140' height='11' rx='5' fill-opacity='.4'/%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='.9'%3E%3Crect x='50' y='176' width='130' height='40' rx='20'/%3E%3Crect x='198' y='176' width='100' height='40' rx='20' fill-opacity='.35'/%3E%3C/g%3E%3Ccircle cx='380' cy='160' r='62' fill='%23ffffff' fill-opacity='.2'/%3E%3Cpath d='M362 134l36 26-36 26z' fill='%23ffffff'/%3E%3C/svg%3E" alt="影像墙：红色赛程变动提示与播放按钮">
+        <span>赛程变更公告第一现场</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 用户口碑 -->
+<section class="dmx-section">
+  <div class="dmx-wrap">
+    <div class="dmx-voice">
+      <div class="dmx-section-head">
+        <span class="dmx-eyebrow" style="color:#ffb020">Voices · 用户口碑</span>
+        <h2>他们这样说每日大赛入口爆料</h2>
+        <p>来自社区用户、参赛者与主办方的真实反馈，语气与角度各不相同。</p>
+      </div>
+      <div class="dmx-voice-grid">
+        <article class="dmx-voice-card">
+          <p>“第一次参赛最怕找错入口。按这里的实测视频走，十分钟完成报名，材料和链接都一次通过。”</p>
+          <div class="dmx-voice-user">
+            <span class="dmx-avatar" style="background:#2f6be8">吴</span>
+            <div><b>吴一舟</b><span>参赛者 · 杭州</span></div>
+          </div>
+        </article>
+        <article class="dmx-voice-card">
+          <p>“节点提醒很及时。有一次截止日顺延，我还没看到官方公告，站内的变动速报已经推出来了。”</p>
+          <div class="dmx-voice-user">
+            <span class="dmx-avatar" style="background:#e08a00">黄</span>
+            <div><b>黄知微</b><span>内容创作者 · 武汉</span></div>
+          </div>
+        </article>
+        <article class="dmx-voice-card">
+          <p>“我们主办方也在这里发布入口说明。相比零散的转发，集中核实的内容让大家少问了很多重复问题。”</p>
+          <div class="dmx-voice-user">
+            <span class="dmx-avatar" style="background:#0d7a52">机构</span>
+            <div><b>某赛务合作方</b><span>赛事运营 · 上海</span></div>
+          </div>
+        </article>
+        <article class="dmx-voice-card">
+          <p>“攻略写得很细，连评审偏好的镜头节奏都提到了，对新手很友好，不是那种只喊口号的指南。”</p>
+          <div class="dmx-voice-user">
+            <span class="dmx-avatar" style="background:#6a3f8f">纪</span>
+            <div><b>纪南声</b><span>短视频创作者 · 成都</span></div>
+          </div>
+        </article>
+        <article class="dmx-voice-card">
+          <p>“页面干净，没有乱七八糟的弹窗。搜索一下就能定位到想要的赛程，这点很难得。”</p>
+          <div class="dmx-voice-user">
+            <span class="dmx-avatar" style="background:#13203a">罗</span>
+            <div><b>罗小满</b><span>学生 · 西安</span></div>
+          </div>
+        </article>
+        <article class="dmx-voice-card">
+          <p>“做过一次爆料投稿，编辑部回复得很快，还帮我补充了核实来源，体验比预想中专业得多。”</p>
+          <div class="dmx-voice-user">
+            <span class="dmx-avatar" style="background:#1f4fd8">秦</span>
+            <div><b>秦照野</b><span>爆料投稿人 · 长沙</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 官方动态 & FAQ -->
+<section class="dmx-section" id="dmx-news">
+  <div class="dmx-wrap">
+    <div class="dmx-lower">
+      <div>
+        <div class="dmx-section-head">
+          <span class="dmx-eyebrow">Updates · 官方动态</span>
+          <h2>企业动态与内容更新日志</h2>
+          <p>品牌活动、内容生态建设与站内更新，在这里按时间线公开记录。</p>
+        </div>
+        <div class="dmx-timeline">
+          <article class="dmx-tl-item">
+            <time>2026 / 11 / 19</time>
+            <h3>爆料条目突破 1,286 条，入口索引页上线</h3>
+            <p>新增按品类与赛程阶段的二级筛选，检索效率提升明显，首周已有三千余人次使用。</p>
+          </article>
+          <article class="dmx-tl-item">
+            <time>2026 / 11 / 14</time>
+            <h3>第 46 期创作者挑战启动，主题为“一次入口的诞生”</h3>
+            <p>面向社区创作者征集入口实测短片，报名通道已在官网开放，优秀作品将进入精选专题。</p>
+          </article>
+          <article class="dmx-tl-item">
+            <time>2026 / 11 / 06</time>
+            <h3>与企业内容团队达成年度内容生态合作</h3>
+            <p>双方将在赛事资讯标准化、入口信息结构化方面展开长期协作，共同提升信息品质。</p>
+          </article>
+          <article class="dmx-tl-item">
+            <time>2026 / 10 / 28</time>
+            <h3>编辑部发布《赛事入口信息核实规范》第二版</h3>
+            <p>明确来源标注、二次复核与变动追踪流程，对来源不明条目一律不予收录。</p>
+          </article>
+        </div>
+      </div>
+      <div class="dmx-faq" id="dmx-faq">
+        <div class="dmx-section-head">
+          <span class="dmx-eyebrow">FAQ · 帮助中心</span>
+          <h2>常见问题</h2>
+          <p>关于入口核实、投稿与内容使用的高频疑问。</p>
+        </div>
+        <details open>
+          <summary>爆料里的入口信息如何核实？</summary>
+          <p>每条爆料至少有两位编辑交叉确认来源，并留存核实截图与时间记录。若主办方后续调整，条目会标注更新时间并给出差异说明。</p>
+        </details>
+        <details>
+          <summary>如何投稿自己的爆料或作品？</summary>
+          <p>点击页面中的“我要投稿爆料”按钮，填写内容说明与来源信息。编辑部会在 2 个工作日内回复，核实通过后进入排版与排期流程。</p>
+        </details>
+        <details>
+          <summary>为什么有些赛程没有收录？</summary>
+          <p>来源无法确认、存在明显营销诱导或涉及违规内容的赛事不会收录。我们宁可少一条，也不希望误导参赛者。</p>
+        </details>
+        <details>
+          <summary>平台内容可以转载吗？</summary>
+          <p>原创视频与图文归作者与平台共同所有。非商业用途需注明出处与原链接；商业用途请通过联系页面提交授权申请。</p>
+        </details>
+        <details>
+          <summary>创作者入驻有什么要求？</summary>
+          <p>有持续产出意愿、内容真实可查，并愿意遵守平台原创与正版规范即可申请。我们更看重稳定的记录习惯，而不是单条爆款。</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 投稿入口 -->
+<section class="dmx-section" id="dmx-submit">
+  <div class="dmx-wrap">
+    <div class="dmx-submit">
+      <div>
+        <span class="dmx-eyebrow">Join Us · 共创内容生态</span>
+        <h2>把你的入口线索，交给认真核实的人</h2>
+        <p>无论你是参赛者、创作者还是赛事主办方，都可以在这里提交线索、上传素材或发布官方说明。平台提供内容协作、选题创意与数据反馈，让每一条爆料都有回声。</p>
+        <div class="dmx-submit-actions">
+          <button class="dmx-btn dmx-btn-primary" id="dmxOpenSubmit">我要投稿爆料</button>
+          <button class="dmx-btn dmx-btn-ghost dmx-share-btn">分享本页</button>
+        </div>
+      </div>
+      <ul class="dmx-submit-list">
+        <li><b>1</b>提交线索与来源说明，越具体越好</li>
+        <li><b>2</b>编辑部二次核实，必要时与你确认细节</li>
+        <li><b>3</b>进入排版与排期，同步站内与社区</li>
+        <li><b>4</b>获得数据反馈与内容协作机会</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="dmx-footer">
+  <div class="dmx-wrap">
+    <div class="dmx-footer-grid">
+      <div>
+        <div class="dmx-footer-brand">
+          <span class="dmx-logo-mark" aria-hidden="true"></span>
+          <span class="dmx-logo-text"><b>每日大赛入口爆料</b><span>DAILY CONTEST FEED</span></span>
+        </div>
+        <p>每日大赛入口爆料官方网站，提供赛事入口资讯、爆料视频与参赛攻略。我们坚持原创、正版与真实溯源，持续运营赛事资讯内容生态，期待与更多创作者一起成长。</p>
+        <div class="dmx-social">
+          <button class="dmx-share-btn" aria-label="分享到微信">微信</button>
+          <button class="dmx-share-btn" aria-label="分享到微博">微博</button>
+          <button class="dmx-share-btn" aria-label="分享到 QQ">QQ</button>
+          <button class="dmx-share-btn" aria-label="复制链接">链接</button>
+        </div>
+      </div>
+      <div>
+        <h3>内容导航</h3>
+        <ul>
+          <li><a href="#dmx-focus">焦点赛事</a></li>
+          <li><a href="#dmx-stream">爆料视频</a></li>
+          <li><a href="#dmx-creators">创作者矩阵</a></li>
+          <li><a href="#dmx-wall">影像墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>关于平台</h3>
+        <ul>
+          <li><a href="#dmx-about">品牌故事</a></li>
+          <li><a href="#dmx-news">官方动态</a></li>
+          <li><a href="#dmx-faq">帮助中心</a></li>
+          <li><a href="#dmx-submit">投稿合作</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>联系与反馈</h3>
+        <p>内容合作：brand@dailycontest.example</p>
+        <p>投稿咨询：creator@dailycontest.example</p>
+        <p>服务时间：周一至周五 10:00 - 19:00</p>
+      </div>
+    </div>
+    <div class="dmx-footer-bottom">
+      <span>© 2026 每日大赛入口爆料 官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容均为原创或经授权使用 · 品牌备案信息：DMX-2026-1109</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 浮动组件 -->
+<div class="dmx-toast" id="dmxToast" role="status" aria-live="polite"></div>
+<button class="dmx-top" id="dmxTop" aria-label="回到顶部">↑</button>
+<div class="dmx-modal" id="dmxSubmitModal">
+  <div class="dmx-modal-box">
+    <h3>投稿爆料</h3>
+    <p>请简要描述赛事入口线索与来源，编辑部会在两个工作日内核实并回复。</p>
+    <textarea id="dmxSubmitText" placeholder="例如：秋季创作大赛入口路径调整，来源为主办方公告页，核实时间……"></textarea>
+    <div class="dmx-modal-row">
+      <button class="dmx-btn dmx-btn-ghost" id="dmxCloseSubmit">取消</button>
+      <button class="dmx-btn dmx-btn-primary" id="dmxSendSubmit">提交</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var toastEl = document.getElementById('dmxToast');
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
+  }
+
+  /* 移动端导航 */
+  var burger = document.getElementById('dmxBurger');
+  var nav = document.getElementById('dmxNav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      nav.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+    }
+  });
+
+  /* 搜索提示 */
+  var dataList = [
+    '秋季创作大赛 入口实测',
+    '数据大赛 入口变更',
+    '短视频挑战赛 报名材料',
+    '团队赛 建队入口',
+    '新人榜 扶持细则',
+    '赛程变动 速报',
+    '评审标准 解读',
+    '创作者访谈 参赛心得'
+  ];
+  var input = document.getElementById('dmxSearchInput');
+  var tip = document.getElementById('dmxSearchTip');
+  var searchBtn = document.getElementById('dmxSearchBtn');
+
+  function showTip(kw){
+    var list = dataList.filter(function(item){
+      return !kw || item.indexOf(kw) > -1;
+    }).slice(0,5);
+    if(!list.length){
+      tip.innerHTML = '<li>未找到相关入口，试试“入口实测”</li>';
+    } else {
+      tip.innerHTML = list.map(function(item){
+        return '<li data-kw="'+item+'">'+item+'</li>';
+      }).join('');
+    }
+    tip.classList.add('active');
+  }
+  input.addEventListener('input', function(){ showTip(input.value.trim()); });
+  input.addEventListener('focus', function(){ showTip(input.value.trim()); });
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){
+      doSearch();
+    }
+  });
+  searchBtn.addEventListener('click', doSearch);
+  tip.addEventListener('click', function(e){
+    var li = e.target.closest('li');
+    if(li){
+      var kw = li.getAttribute('data-kw');
+      if(kw){ input.value = kw; }
+      doSearch();
+    }
+  });
+  function doSearch(){
+    var kw = input.value.trim();
+    tip.classList.remove('active');
+    if(!kw){
+      toast('请输入搜索关键词');
+      return;
+    }
+    toast('已为你筛选：' + kw);
+  }
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.dmx-search')){
+      tip.classList.remove('active');
+    }
+  });
+
+  /* 标签筛选 */
+  var filterWrap = document.getElementById('dmxFilter');
+  var cards = document.querySelectorAll('#dmxStream .dmx-card');
+  filterWrap.addEventListener('click', function(e){
+    var chip = e.target.closest('.dmx-chip');
+    if(!chip) return;
+    filterWrap.querySelectorAll('.dmx-chip').forEach(function(c){ c.classList.remove('active'); });
+    chip.classList.add('active');
+    var f = chip.getAttribute('data-filter');
+    var shown = 0;
+    cards.forEach(function(card){
+      var ok = (f === 'all') || (card.getAttribute('data-cat') === f);
+      card.style.display = ok ? '' : 'none';
+      if(ok) shown++;
+    });
+    toast('已显示 ' + shown + ' 条相关爆料');
+  });
+
+  /* 点赞 / 收藏 */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('.dmx-like-btn');
+    if(likeBtn){
+      var span = likeBtn.querySelector('.dmx-like-count');
+      var n = parseInt(span.textContent, 10) || 0;
+      var liked = likeBtn.getAttribute('data-liked') === 'true';
+      if(liked){
+        n = Math.max(0, n - 1);
+        likeBtn.setAttribute('data-liked','false');
+        likeBtn.classList.remove('liked');
+        likeBtn.firstChild.nodeValue = '♡ ';
+        toast('已取消点赞');
+      } else {
+        n = n + 1;
+        likeBtn.setAttribute('data-liked','true');
+        likeBtn.classList.add('liked');
+        likeBtn.firstChild.nodeValue = '♥ ';
+        toast('点赞成功，感谢支持原创爆料');
+      }
+      span.textContent = n;
+      return;
+    }
+    var saveBtn = e.target.closest('.dmx-save-btn');
+    if(saveBtn){
+      var on = saveBtn.classList.toggle('saved');
+      saveBtn.textContent = on ? '★ 已收藏' : '☆ 收藏';
+      toast(on ? '已收藏该条爆料' : '已取消收藏');
+      return;
+    }
+    var shareBtn = e.target.closest('.dmx-share-btn');
+    if(shareBtn){
+      var link = window.location.href;
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(link).then(function(){
+          toast('链接已复制，可分享给同好');
+        }).catch(function(){
+          toast('请通过浏览器地址栏复制链接分享');
+        });
+      } else {
+        toast('请通过浏览器地址栏复制链接分享');
+      }
+    }
+  });
+
+  /* 数字滚动 */
+  var counters = document.querySelectorAll('[data-count]');
+  var done = false;
+  function runCounters(){
+    if(done) return;
+    done = true;
+    counters.forEach(function(el){
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      var start = null;
+      function step(ts){
+        if(!start) start = ts;
+        var p = Math.min((ts - start) / 1200, 1);
+        el.textContent = Math.floor(target * (0.15 + 0.85 * p)) + (p >= 1 ? (target > 100 ? '' : '') : '');
+        if(p < 1){
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target;
+        }
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ runCounters(); io.disconnect(); }
+      });
+    }, {threshold:0.35});
+    var stats = document.querySelector('.dmx-hero-stats');
+    if(stats) io.observe(stats);
+  } else {
+    runCounters();
+  }
+
+  /* 回到顶部 */
+  var topBtn = document.getElementById('dmxTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 560){
+      topBtn.classList.add('show');
+    } else {
+      topBtn.classList.remove('show');
+    }
+  });
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 投稿弹窗 */
+  var modal = document.getElementById('dmxSubmitModal');
+  var openBtn = document.getElementById('dmxOpenSubmit');
+  var closeBtn = document.getElementById('dmxCloseSubmit');
+  var sendBtn = document.getElementById('dmxSendSubmit');
+  var textArea = document.getElementById('dmxSubmitText');
+  openBtn.addEventListener('click', function(){
+    modal.classList.add('show');
+    setTimeout(function(){ textArea.focus(); }, 120);
+  });
+  closeBtn.addEventListener('click', function(){
+    modal.classList.remove('show');
+  });
+  modal.addEventListener('click', function(e){
+    if(e.target === modal) modal.classList.remove('show');
+  });
+  sendBtn.addEventListener('click', function(){
+    var val = textArea.value.trim();
+    if(val.length < 8){
+      toast('请补充至少 8 个字的线索说明');
+      return;
+    }
+    modal.classList.remove('show');
+    textArea.value = '';
+    toast('提交成功，编辑部将尽快核实回复');
+  });
+})();
+</script>
+</body>
+      </html>
